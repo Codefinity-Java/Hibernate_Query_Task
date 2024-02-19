@@ -11,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.regex.Pattern;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
@@ -54,14 +53,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<String> getEmployeesNamesHiredInASpecificTimeframe(String startDate, String endDate) {
         List<Employee> employees = getEmployeesHiredInASpecificTimeframe(startDate, endDate);
-        List<String> names = employees.stream().map(Employee::getName).toList();
-        return names;
+        return employees.stream().map(Employee::getName).toList();
+    }
+
+    @Override
+    public List<Employee> getAll() {
+        return null;
+    }
+
+    @Override
+    public List<Employee> getEmployeesWithSalaryMoreThan(Double salary) {
+        return null;
     }
 
     private Date dateParser(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate localDate = LocalDate.parse(date, formatter);
-        Date result = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        return result;
+        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
     }
 }

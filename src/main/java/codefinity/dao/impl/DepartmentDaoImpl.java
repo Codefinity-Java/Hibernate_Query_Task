@@ -2,12 +2,13 @@ package codefinity.dao.impl;
 
 import codefinity.dao.DepartmentDao;
 import codefinity.model.Department;
-import codefinity.model.Employee;
 import codefinity.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
+import java.util.List;
 
 public class DepartmentDaoImpl implements DepartmentDao {
     private final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -49,5 +50,10 @@ public class DepartmentDaoImpl implements DepartmentDao {
             }
         }
         return department;
+    }
+
+    @Override
+    public List<Department> getAll() {
+        return null;
     }
 }

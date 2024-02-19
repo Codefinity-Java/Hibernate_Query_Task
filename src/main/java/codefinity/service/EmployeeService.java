@@ -14,4 +14,8 @@ public interface EmployeeService {
     List<Employee> getEmployeesHiredInASpecificTimeframe(String startDate, String endDate);
 
     List<String> getEmployeesNamesHiredInASpecificTimeframe(String startDate, String endDate);
+
+    List<Employee> getAll();
+
+    List<Employee> getEmployeesWithSalaryMoreThan(Double salary);
 }

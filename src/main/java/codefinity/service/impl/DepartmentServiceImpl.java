@@ -5,6 +5,7 @@ import codefinity.dao.impl.DepartmentDaoImpl;
 import codefinity.model.Department;
 import codefinity.service.DepartmentService;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class DepartmentServiceImpl implements DepartmentService {
@@ -35,5 +36,10 @@ public class DepartmentServiceImpl implements DepartmentService {
             throw new NullPointerException("The department's name is null, " +
                     "or there is no name for an department with ID " + id);
         }
+    }
+
+    @Override
+    public List<Department> getAll() {
+        return null;
     }
 }

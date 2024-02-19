@@ -11,4 +11,8 @@ public interface EmployeeDao {
     Employee getById(int id);
 
     List<Employee> getEmployeesHiredInASpecificTimeframe(Date startDate, Date endDate);
+
+    List<Employee> getAll();
+
+    List<Employee> getEmployeesWithSalaryMoreThan(Double salary);
 }

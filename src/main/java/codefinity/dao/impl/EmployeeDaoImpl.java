@@ -7,7 +7,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.util.Date;
@@ -76,5 +75,15 @@ public class EmployeeDaoImpl implements EmployeeDao {
             }
         }
         return employees;
+    }
+
+    @Override
+    public List<Employee> getAll() {
+        return null;
+    }
+
+    @Override
+    public List<Employee> getEmployeesWithSalaryMoreThan(Double salary) {
+        return null;
     }
 }
